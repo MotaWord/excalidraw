@@ -224,7 +224,13 @@ export {
 } from "../../packages/utils";
 export { isLinearElement } from "../../element/typeChecks";
 
-export { FONT_FAMILY, THEME, MIME_TYPES } from "../../constants";
+export {
+  FONT_FAMILY,
+  THEME,
+  MIME_TYPES,
+  FONT_STYLE,
+  FONT_WEIGHT,
+} from "../../constants";
 
 export {
   mutateElement,
