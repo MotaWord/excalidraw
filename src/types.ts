@@ -37,6 +37,7 @@ import type { IMAGE_MIME_TYPES, MIME_TYPES } from "./constants";
 import { ContextMenuItems } from "./components/ContextMenu";
 import { SnapLine } from "./snapping";
 import { Merge, ForwardRef, ValueOf } from "./utility-types";
+import { ActionManager } from "./actions/manager";
 
 export type Point = Readonly<RoughPoint>;
 
@@ -615,6 +616,7 @@ type UnsubscribeCallback = () => void;
 
 export type ExcalidrawImperativeAPI = {
   updateScene: InstanceType<typeof App>["updateScene"];
+  actionManager: InstanceType<typeof App>["actionManager"];
   updateLibrary: InstanceType<typeof Library>["updateLibrary"];
   resetScene: InstanceType<typeof App>["resetScene"];
   getSceneElementsIncludingDeleted: InstanceType<
