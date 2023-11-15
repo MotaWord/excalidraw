@@ -565,27 +565,6 @@ class App extends React.Component<AppProps, AppState> {
     this.rc = rough.canvas(this.canvas);
     this.renderer = new Renderer(this.scene);
 
-    this.excalidrawContainerValue = {
-      container: this.excalidrawContainerRef.current,
-      id: this.id,
-    };
-
-    this.fonts = new Fonts({
-      scene: this.scene,
-      onSceneUpdated: this.onSceneUpdated,
-    });
-    this.history = new History();
-    this.actionManager = new ActionManager(
-      this.syncActionResult,
-      () => this.state,
-      () => this.scene.getElementsIncludingDeleted(),
-      this,
-    );
-    this.actionManager.registerAll(actions);
-
-    this.actionManager.registerAction(createUndoAction(this.history));
-    this.actionManager.registerAction(createRedoAction(this.history));
-
     if (excalidrawRef) {
       const readyPromise =
         ("current" in excalidrawRef && excalidrawRef.current?.readyPromise) ||
@@ -594,7 +573,6 @@ class App extends React.Component<AppProps, AppState> {
       const api: ExcalidrawImperativeAPI = {
         ready: true,
         readyPromise,
-        actionManager: this.actionManager,
         updateScene: this.updateScene,
         updateLibrary: this.library.updateLibrary,
         addFiles: this.addFiles,
@@ -626,6 +604,27 @@ class App extends React.Component<AppProps, AppState> {
       }
       readyPromise.resolve(api);
     }
+
+    this.excalidrawContainerValue = {
+      container: this.excalidrawContainerRef.current,
+      id: this.id,
+    };
+
+    this.fonts = new Fonts({
+      scene: this.scene,
+      onSceneUpdated: this.onSceneUpdated,
+    });
+    this.history = new History();
+    this.actionManager = new ActionManager(
+      this.syncActionResult,
+      () => this.state,
+      () => this.scene.getElementsIncludingDeleted(),
+      this,
+    );
+    this.actionManager.registerAll(actions);
+
+    this.actionManager.registerAction(createUndoAction(this.history));
+    this.actionManager.registerAction(createRedoAction(this.history));
   }
 
   private onWindowMessage(event: MessageEvent) {

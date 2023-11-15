@@ -139,14 +139,14 @@ export const FRAME_STYLE = {
   roughness: 0 as ExcalidrawElement["roughness"],
   roundness: null as ExcalidrawElement["roundness"],
   backgroundColor: "transparent" as ExcalidrawElement["backgroundColor"],
-  radius: 8,
+  radius: 0,
 };
 
 export const WINDOWS_EMOJI_FALLBACK_FONT = "Segoe UI Emoji";
 
 export const MIN_FONT_SIZE = 1;
-export const DEFAULT_FONT_SIZE = 20;
-export const DEFAULT_FONT_FAMILY: FontFamilyValues = FONT_FAMILY.Virgil;
+export const DEFAULT_FONT_SIZE = 18;
+export const DEFAULT_FONT_FAMILY: FontFamilyValues = FONT_FAMILY["Noto Sans"];
 export const DEFAULT_FONT_WEIGHT: FontWeightValues = "normal";
 export const DEFAULT_FONT_STYLE: FontStyleValues = "normal";
 export const DEFAULT_TEXT_ALIGN = "left";

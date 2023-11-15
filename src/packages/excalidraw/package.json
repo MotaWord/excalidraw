@@ -1,6 +1,6 @@
 {
   "name": "@motaword/excalidraw",
-  "version": "0.16.7",
+  "version": "0.16.8",
   "main": "main.js",
   "types": "types/packages/excalidraw/index.d.ts",
   "files": [
