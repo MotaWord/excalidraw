@@ -792,7 +792,7 @@ describe("textWysiwyg", () => {
       await new Promise((r) => setTimeout(r, 0));
       updateTextEditor(editor, "Hello World!");
       editor.blur();
-      expect(text.fontFamily).toEqual(FONT_FAMILY.Virgil);
+      expect(text.fontFamily).toEqual(FONT_FAMILY.Helvetica);
       UI.clickTool("text");
 
       mouse.clickAt(

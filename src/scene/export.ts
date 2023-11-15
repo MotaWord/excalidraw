@@ -185,6 +185,10 @@ export const exportToSvg = async (
   ${metadata}
   <defs>
     <style class="style-fonts">
+    @font-face {
+        font-family: "Helvetica";
+        src: url("${assetPath}Helvetica.woff2");
+      }
       @font-face {
         font-family: "Virgil";
         src: url("${assetPath}Virgil.woff2");

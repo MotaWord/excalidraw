@@ -806,7 +806,7 @@ export default function App({ appTitle, useCustom, customArgs }: AppProps) {
                 files: excalidrawAPI.getFiles(),
               });
               const ctx = canvas.getContext("2d")!;
-              ctx.font = "30px Virgil";
+              ctx.font = "30px Helvetica";
               ctx.strokeText("My custom text", 50, 60);
               setCanvasUrl(canvas.toDataURL());
             }}
@@ -827,7 +827,7 @@ export default function App({ appTitle, useCustom, customArgs }: AppProps) {
                 files: excalidrawAPI.getFiles(),
               });
               const ctx = canvas.getContext("2d")!;
-              ctx.font = "30px Virgil";
+              ctx.font = "30px Helvetica";
               ctx.strokeText("My custom text", 50, 60);
               setCanvasUrl(canvas.toDataURL());
             }}

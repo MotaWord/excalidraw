@@ -36,10 +36,10 @@ exportToCanvas(&#123;<br/>&nbsp;
 #### getDimensions
 
 ```tsx
-(width: number, height: number) => { 
+(width: number, height: number) => {
   width: number,
-  height: number, 
-  scale?: number 
+  height: number,
+  scale?: number
 }
 ```
 A function which returns the `width`, `height`, and optionally `scale` (defaults to  `1`), with which canvas is to be exported.
@@ -79,7 +79,7 @@ function App() {
             getDimensions: () => { return {width: 350, height: 350}}
           });
           const ctx = canvas.getContext("2d");
-          ctx.font = "30px Virgil";
+          ctx.font = "30px Helvetica";
           ctx.strokeText("My custom text", 50, 60);
           setCanvasUrl(canvas.toDataURL());
         }}
@@ -133,7 +133,7 @@ Returns a promise which resolves with a [blob](https://developer.mozilla.org/en-
 
 <pre>
 exportToSvg(&#123;<br/>&nbsp;
-  elements:&nbsp; 
+  elements:&nbsp;
     <a href="https://github.com/excalidraw/excalidraw/blob/master/src/element/types.ts#L114">
       ExcalidrawElement[]
     </a>,<br/>&nbsp;
